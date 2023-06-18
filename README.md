@@ -74,5 +74,6 @@ If the deployed script is deleted, this response will be returned instead:
 }
 ```
 
-> **Note:** The script will be automatically deleted after the burn time has passed (Default burn time is 120 seconds), or if the script is used once.
+> **Note**: 
+> The script will be automatically deleted after the burn time has passed (Default burn time is 120 seconds), or if the script is used once.
 > Another thing to note is that if the fetch succeeds, the Content-Type will be `text/plain`, otherwise it will be `application/json`.
