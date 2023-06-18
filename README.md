@@ -43,5 +43,36 @@ axios.post("http://localhost:3000/api/deploy", { // You can also append the "bur
 
 Response: 
 ```javascript
-...
+{
+	"message": "Script deployed",
+	"burnTime": "100000",
+	"scriptId": "nqwKIHPJMWVn6hnKjiua3dvRy2F4QlP46BEg9DacdS3HWRtbv63Of8cSAx9bF9biI58IQwMbciBEhzBiJT4sfBokNvUdbz3TgWgV"
+}
 ```
+
+## Reading the script
+
+JavaScript example using Axios:
+```js
+const axios = require("axios");
+
+axios.get("http://localhost:3000/api/use/nqwKIHPJMWVn6hnKjiua3dvRy2F4QlP46BEg9DacdS3HWRtbv63Of8cSAx9bF9biI58IQwMbciBEhzBiJT4sfBokNvUdbz3TgWgV").then((res) => {
+	console.log(res.data);
+}).catch((err) => {
+	console.error(err);
+});
+```
+
+Response: 
+```lua
+print("Hello, world!")
+```
+If the deployed script is deleted, this response will be returned instead: 
+```javascript
+{
+	"error": "Script not found"
+}
+```
+
+> **Note:** The script will be automatically deleted after the burn time has passed (Default burn time is 120 seconds), or if the script is used once.
+> Another thing to note is that if the fetch succeeds, the Content-Type will be `text/plain`, otherwise it will be `application/json`.
