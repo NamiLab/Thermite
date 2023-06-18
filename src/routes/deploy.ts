@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from "fastify";
+import { randomUUID } from "crypto";
 export const method = "POST";
 export const name = "deploy";
 
-import { generateRandom } from "../utils/UUID.js";
 import { createLua } from "../utils/CreateLua.js";
 
 export const run = async (request: FastifyRequest, reply: FastifyReply, cache: any) => {
@@ -12,7 +12,7 @@ export const run = async (request: FastifyRequest, reply: FastifyReply, cache: a
 	if (!burnTime) burnTime = 120000;
 	if (burnTime > 600000) burnTime = 600000;
 
-	const scriptId = await generateRandom(100);
+	const scriptId = randomUUID();
 	cache[scriptId] = request.body;
 	console.log(`Deployed script #${Object.keys(cache).length - 1} - Cache size: ${Object.keys(cache).length} items stored`);
 	setTimeout(() => {

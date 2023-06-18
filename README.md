@@ -46,7 +46,7 @@ Response:
 {
 	"message": "Script deployed",
 	"burnTime": "100000",
-	"scriptId": "nqwKIHPJMWVn6hnKjiua3dvRy2F4QlP46BEg9DacdS3HWRtbv63Of8cSAx9bF9biI58IQwMbciBEhzBiJT4sfBokNvUdbz3TgWgV"
+	"scriptId": "573469c9-3a9f-467b-aba2-ed7e052e31df"
 }
 ```
 
@@ -56,7 +56,7 @@ JavaScript example using Axios:
 ```js
 const axios = require("axios");
 
-axios.get("http://localhost:3000/api/use/nqwKIHPJMWVn6hnKjiua3dvRy2F4QlP46BEg9DacdS3HWRtbv63Of8cSAx9bF9biI58IQwMbciBEhzBiJT4sfBokNvUdbz3TgWgV").then((res) => {
+axios.get("http://localhost:3000/api/use/573469c9-3a9f-467b-aba2-ed7e052e31df").then((res) => {
 	console.log(res.data);
 }).catch((err) => {
 	console.error(err);
