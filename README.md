@@ -32,7 +32,7 @@ JavaScript example using Axios:
 ```js
 const axios = require("axios");
 
-axios.post("http://localhost:3000/api/deploy", {
+axios.post("http://localhost:3000/api/deploy", { // You can also append the "burntime" query parameter to the URL to specify a custom burn time in milliseconds (When the script will be self-destructed)
 	script: `print("Hello, world!")`
 }).then((res) => {
 	console.log(res.data);
