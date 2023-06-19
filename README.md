@@ -32,7 +32,7 @@ JavaScript example using Axios:
 ```js
 const axios = require("axios");
 
-axios.post("http://localhost:3000/api/deploy", { // You can also append the "burntime" query parameter to the URL to specify a custom burn time in milliseconds (When the script will be self-destructed)
+axios.post("http://localhost:3000/api/deploy", { // You can also append the "burnTime" query parameter to the URL to specify a custom burn time in milliseconds (When the script will be self-destructed)
 	script: `print("Hello, world!")`
 }).then((res) => {
 	console.log(res.data);
@@ -77,3 +77,22 @@ If the deployed script is deleted, this response will be returned instead:
 > **Note**: 
 > The script will be automatically deleted after the burn time has passed (Default burn time is 120 seconds), or if the script is used once.
 > Another thing to note is that if the fetch succeeds, the Content-Type will be `text/plain`, otherwise it will be `application/json`.
+
+## Using Discord Webhooks with Thermite
+
+Thermite supports Discord Webhooks, which means that you can get notified when a script is deployed, used or deleted. You will need to append the `webhookUrl` query parameter to the URL when deploying a script.
+
+JavaScript example using Axios:
+```js
+const axios = require("axios");
+
+axios.post("http://localhost:3000/api/deploy?webhookUrl=WEBHOOK-FULL-URL-HERE", {
+	script: `print("Hello, world!")`
+}).then((res) => {
+	console.log(res.data);
+}).catch((err) => {
+	console.error(err);
+});
+```
+
+<img src="gitassets/webhooks.png">
