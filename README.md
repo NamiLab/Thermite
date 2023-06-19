@@ -95,4 +95,4 @@ axios.post("http://localhost:3000/api/deploy?webhookUrl=WEBHOOK-FULL-URL-HERE", 
 });
 ```
 
-<img src="gitassets/webhooks.png">
+<img src="gitassets/webhooks.png" width=650px>
