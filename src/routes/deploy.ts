@@ -27,7 +27,7 @@ export const run = async (request: FastifyRequest, reply: FastifyReply, cache: a
 			embeds: [
 				{
 					title: "Deployed to Thermite",
-					description: `Script (\`${scriptId}\`) was deployed <t:${Math.floor(Date.now() / 1000)}:R>, it will become unusable <t:${Math.floor((Date.now() + burnTime) / 1000)}:R> seconds.\n\nYou can use it by sending a GET request to the endpoint: \`/api/use/${scriptId}\``,
+					description: `Script (\`${scriptId}\`) was deployed <t:${Math.floor(Date.now() / 1000)}:R>, it will become unusable <t:${Math.floor((Date.now() + burnTime) / 1000)}:R>.\n\nYou can use it by sending a GET request to the endpoint: \`/api/use/${scriptId}\``,
 					color: 9109357,
 					footer: {
 						text: "Thermite",
